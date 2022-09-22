@@ -40,6 +40,7 @@ function CrudApi() {
 
     api.put(endpoint, options).then((res) => {
       if (!res.err) {
+        console.log(db);
         let newData = db.map((e) => (e.id === data.id ? data : e));
         setDb(newData);
       } else {
@@ -59,8 +60,6 @@ function CrudApi() {
           setDb(newData);
         }
       });
-
-      // let newData = db.filter((e) => e.id !== id);
     }
   };
 
